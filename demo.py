@@ -14,9 +14,12 @@ b.load(1000, 10, win)
 crashed = False
 x, y = 0, 0
 
-player = pygame.image.load("UFO Small.png") # You need to download UFO Small file
+player = pygame.image.load("UFO Small.png")
 playerpos = [400, 300]
 
+pygame.mixer.init()
+pygame.mixer.music.load('Relaxing Piano Music.mp3')
+pygame.mixer.music.play(-1)
 
 while not crashed:
     for event in pygame.event.get():
@@ -24,13 +27,13 @@ while not crashed:
             crashed = True
             
     keys = pygame.key.get_pressed()  #checking pressed keys
-    if keys[pygame.K_UP] and y > -5: # x and y are the speed and the 'ands' are speed limits
+    if keys[pygame.K_UP] and y > -10: # x and y are the speed and the 'ands' are speed limits
         y -= 1
-    if keys[pygame.K_DOWN] and y < 5:
+    if keys[pygame.K_DOWN] and y < 10:
         y +=1
-    if keys[pygame.K_LEFT] and x > -5:
+    if keys[pygame.K_LEFT] and x > -10:
         x -= 1
-    if keys[pygame.K_RIGHT] and x < 5:
+    if keys[pygame.K_RIGHT] and x < 10:
         x +=1
         
     win.fill((0, 0 ,0))
