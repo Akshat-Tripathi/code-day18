@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jul 11 11:53:40 2018
-
-@author: akshat
+@author: akshat, daniel, wijdaan, fergus, jonathan
 """
 
 import pygame, os, random
@@ -16,7 +15,7 @@ class background():
     
     def load(self, star_count, planet_count, window):
         #load planets and stars
-        planets = [pygame.transform.scale(pygame.image.load("planets/" + i), (200, 200)) for i in os.listdir("planets")] * planet_count
+        planets = [pygame.transform.scale(pygame.image.load("planets/" + i), (375, 350)) for i in os.listdir("planets")] * planet_count
         stars = [pygame.transform.scale(pygame.image.load("stars/" + i), (10, 10)) for i in os.listdir("stars")] * star_count
         #make dict of initial locations
         star_locs = []
@@ -51,10 +50,7 @@ class background():
             i[1][1] -= y
             window.blit(i[0], i[1])
         print("moved successfully")
-        
-def to_vec(thrust, angle):
     
-
 if __name__ == "__main__":
     win = pygame.display.set_mode((1000,1000))
     b = background(5000, 5000)
@@ -82,4 +78,3 @@ if __name__ == "__main__":
 
         pygame.display.update()
         sleep(0.1)
-
