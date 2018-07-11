@@ -1,7 +1,8 @@
 import pygame, time
-
 pygame.init()
-pygame.mixer.init()
+
+import pygame.mixer
+pygame.mixer.init(frequency=22050, size=-16, channels=2, buffer=4096)
 
 sound1 = pygame.mixer.Sound('Garden Music.mp3')
 sound2 = pygame.mixer.Sound('Floating Cities.mp3')
