@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jul 11 13:25:32 2018
-@author: akshat, danyo (speed limits and correcting the flight pattern)
-Wijdaan too.
+@author: akshat, daniel, wijdaan, jonathan, fergus
 """
 
 import pygame
@@ -14,6 +13,11 @@ b = background(10000, 10000)
 b.load(1000, 10, win)
 crashed = False
 x, y = 0, 0
+
+player = pygame.image.load("UFO Small.png") # You need to download UFO Small file
+playerpos = [400, 300]
+
+
 while not crashed:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -29,8 +33,8 @@ while not crashed:
     if keys[pygame.K_RIGHT] and x < 5:
         x +=1
         
-
     win.fill((0, 0 ,0))
     b.move(x, y, win) # actual movement
+    win.blit(player, playerpos)
     pygame.display.update()
     sleep(0.1)
