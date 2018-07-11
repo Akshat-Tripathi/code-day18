@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jul 11 13:25:32 2018
-
 @author: akshat
+(and Danyo for the speed limits)
+Wijdaan too.
 """
 
 import pygame
@@ -20,18 +21,17 @@ while not crashed:
             crashed = True
             
     keys = pygame.key.get_pressed()  #checking pressed keys
-    if keys[pygame.K_UP]:
-        y += 1
-    if keys[pygame.K_DOWN]:
-        y-=1
-    if keys[pygame.K_LEFT]:
-        x += 1
-    if keys[pygame.K_RIGHT]:
-        x-=1
+    if keys[pygame.K_UP] and y > -5: # x and y are the speed and the 'ands' are speed limits
+        y -= 1
+    if keys[pygame.K_DOWN] and y < 5:
+        y +=1
+    if keys[pygame.K_LEFT] and x > -5:
+        x -= 1
+    if keys[pygame.K_RIGHT] and x < 5:
+        x +=1
         
 
     win.fill((0, 0 ,0))
-    b.move(x, y, win)
+    b.move(x, y, win) # actual movement
     pygame.display.update()
     sleep(0.1)
-
