@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jul 11 13:25:32 2018
-@author: akshat
-(and Danyo for the speed limits)
+@author: akshat, danyo (speed limits and correcting the flight pattern)
 Wijdaan too.
 """
 
