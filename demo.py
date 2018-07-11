@@ -10,15 +10,15 @@ from initialisation import background
 
 win = pygame.display.set_mode((1000,1000))
 b = background(10000, 10000)
-b.load(1000, 10, win)
+b.load(1500, 5, win)
 crashed = False
 x, y = 0, 0
 
-player = pygame.image.load("UFO Small.png")
-playerpos = [400, 300]
+player = pygame.transform.scale(pygame.image.load("UFO Small.png"), (150, 150))
+playerpos = [450, 300]
 
 pygame.mixer.init()
-pygame.mixer.music.load('Relaxing Piano Music.mp3')
+pygame.mixer.music.load('Music1.mp3')
 pygame.mixer.music.play(-1)
 
 while not crashed:
