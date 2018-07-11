@@ -12,7 +12,7 @@ channel1.play(sound1,loops=-1,fade_ms=1000)
 time.sleep(20)
 
 channel1.fadeout(1000)
-channel1.play(loops=-1,fade_ms=1000)
+channel1.play(sound2,loops=-1,fade_ms=1000)
 
 
 # Test if this works plz :)
